@@ -998,8 +998,34 @@
             background: #000;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 0 80px;
+            justify-content: flex-start;  /* 改为从顶部开始 */
+            padding: 0;  /* 移除固定padding */
+            overflow-y: scroll;  /* 添加滚动 */
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .reflection-content {
+            padding: 100px 80px 300px 80px;  /* 添加内边距 */
+            min-height: 150vh;  /* 确保可以滚动 */
+        }
+
+        /* Custom scrollbar for reflection right side */
+        .reflection-right::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .reflection-right::-webkit-scrollbar-track {
+            background: #111;
+        }
+
+        .reflection-right::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+
+        .reflection-right::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         .reflection-content h2 {
