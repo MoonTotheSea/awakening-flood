@@ -613,11 +613,20 @@
             gap: 25px;
             max-width: 1500px;
             margin: 0 auto;
+            justify-items: center;
+        }
+
+        /* Center last row if incomplete */
+        .grid-container::after {
+            content: '';
+            grid-column: 1 / -1;
         }
 
         .grid-item {
             position: relative;
             height: 320px;
+            width: 100%;
+            max-width: 450px;
             overflow: hidden;
             cursor: pointer;
             /* NO BORDER - removed */
@@ -1098,33 +1107,41 @@
             <p>From Conception to Awakening</p>
         </div>
         <div class="timeline">
+            <!-- Block 1: Conception -->
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Conception</h3>
-                    <p>The project began with a constraint: use black and white to resist the flood of color, use silence to resist noise.</p>
+                    <h3>I. Conception — Dormant</h3>
+                    <p><strong>The Method:</strong> The project began with a constraint: use black and white to resist the flood of color, use silence to resist noise. I generated ten standalone sentences exploring time, memory, love, and nature—each designed to create a pause, a breath in the urban torrent.</p>
                 </div>
-                <div class="timeline-media"></div>
+                <div class="timeline-media">
+                    <!-- Optional: Add conception images here -->
+                </div>
             </div>
+
+            <!-- Block 2: Production -->
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Creation</h3>
-                    <p>Ten sentences were crafted and printed, ready to intervene in urban space.</p>
+                    <h3>II. Production — Creation</h3>
+                    <p><strong>Printing:</strong> Each sentence was carefully printed in clean, black typography on white paper. The process of cutting, arranging, and preparing these verses transformed abstract ideas into physical interventions ready to enter public space.</p>
                 </div>
-                <div class="timeline-media"></div>
+                <div class="timeline-media">
+                    <!-- Add printing process images here -->
+                    <img src="images/process-print.jpg" alt="Printing process" onerror="this.style.display='none'">
+                </div>
             </div>
+
+            <!-- Block 3: Intervention -->
             <div class="timeline-item">
                 <div class="timeline-content">
-                    <h3>Intervention</h3>
-                    <p>The poems were placed across Toronto—bulletin boards, subway platforms, street poles.</p>
+                    <h3>III. Intervention — Placement</h3>
+                    <p><strong>Placing:</strong> The poems were placed, pasted, and installed across downtown Toronto—on bulletin boards, subway platforms, phone booths, and walls. Each placement was an act of trust that these private voices would meet anonymous souls at unexpected moments.</p>
                 </div>
-                <div class="timeline-media"></div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-content">
-                    <h3>Discovery</h3>
-                    <p>Each placement was an act of trust—that a private voice would meet an anonymous soul.</p>
+                <div class="timeline-media">
+                    <!-- Embedded video: autoplay, loop, muted -->
+                    <video autoplay loop muted playsinline>
+                        <source src="videos/process-intervention.mp4" type="video/mp4">
+                    </video>
                 </div>
-                <div class="timeline-media"></div>
             </div>
         </div>
     </section>
@@ -1287,7 +1304,7 @@
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.flood-content, .breath-section, .timeline-item, #flood, #grid, #chapter-breaths, #chapter-flood').forEach(el => {
+        document.querySelectorAll('.flood-content, .breath-section, .timeline-item, .doc-header, #flood, #grid, #chapter-breaths, #chapter-flood').forEach(el => {
             observer.observe(el);
         });
     </script>
