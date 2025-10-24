@@ -1282,7 +1282,7 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>III. Intervention — Placement</h3>
-                    <p><strong>Poetic Footprints:</strong> Each poem was placed across downtown Toronto. The map below traces these interventions—ten moments when private voices entered public space, waiting to meet anonymous souls at unexpected moments.</p>
+                    <p><strong>Poetic Footprints:</strong> Each poem was placed across downtown Toronto. The interactive map below traces these interventions—ten moments when private voices entered public space, waiting to meet anonymous souls at unexpected moments. Hover over the pulsing red pins to see each location, and click any pin to revisit that poem.</p>
                 </div>
                 <div class="map-container">
                     <img src="https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/13.png" alt="Toronto intervention map">
@@ -1336,7 +1336,9 @@
     <!-- STAGE 6: REFLECTION -->
     <section id="reflection">
         <div class="reflection-left">
-            <div class="reflection-gradient"></div>
+            <video class="reflection-video" autoplay loop muted playsinline>
+                <source src="videos/close.mp4" type="video/mp4">
+            </video>
         </div>
         <div class="reflection-right">
             <div class="reflection-content">
@@ -1355,27 +1357,34 @@
     </footer>
 
     <script>
-        // ========== AUDIO MANAGEMENT ==========
-        let cityAmbience = null;
+        // ========== AUDIO MANAGEMENT SYSTEM ==========
+        let floodAmbience = null;
         
         // Auto-play opening video and scroll cue
         window.addEventListener('load', () => {
             const openingVideo = document.querySelector('.opening-video');
             const scrollCue = document.querySelector('.scroll-cue');
             
-            // Create audio element for city ambience
-            cityAmbience = new Audio('videos/open.mp4');
-            cityAmbience.loop = true;
-            cityAmbience.volume = 0;
+            // Create audio element for flood ambience
+            floodAmbience = new Audio('videos/flow.m4a');
+            floodAmbience.loop = true;
+            floodAmbience.volume = 0;
             
             // Start video at credit 3 (12s)
             setTimeout(() => {
                 openingVideo.classList.add('visible');
                 openingVideo.play();
                 
-                // Start audio and fade in
-                cityAmbience.play();
-                fadeAudio(cityAmbience, 0, 0.3, 2000);
+                // Start audio and fade in to 50% (Opening Credits)
+                floodAmbience.play().catch(err => {
+                    console.log('Audio autoplay prevented:', err);
+                    // Add click-to-play fallback
+                    document.body.addEventListener('click', () => {
+                        floodAmbience.play();
+                        fadeAudio(floodAmbience, 0, 0.5, 2000);
+                    }, { once: true });
+                });
+                fadeAudio(floodAmbience, 0, 0.5, 2000); // Fade to 50% over 2s
             }, 12000);
             
             // Show scroll cue (faster - at 13s)
@@ -1395,6 +1404,8 @@
 
         // Audio fade utility
         function fadeAudio(audio, startVol, endVol, duration) {
+            if (!audio) return;
+            
             const steps = 50;
             const stepDuration = duration / steps;
             const volumeStep = (endVol - startVol) / steps;
@@ -1439,8 +1450,9 @@
             floodSection.style.transition = 'opacity 1.5s ease-out';
             floodSection.style.opacity = '0';
             
-            if (cityAmbience) {
-                fadeAudio(cityAmbience, cityAmbience.volume, 0, 1500);
+            // Fast fade out audio (Chapter Card I)
+            if (floodAmbience) {
+                fadeAudio(floodAmbience, floodAmbience.volume, 0, 800); // Fast fade to 0
             }
             
             // Step 2: After fade out, pause (0.5s), then scroll to chapter
@@ -1453,7 +1465,37 @@
             }, 1500);
         }
 
-        // ========== INTERSECTION OBSERVER ==========
+        // ========== REFLECTION: THE FINAL BREATH ==========
+        const reflectionRight = document.querySelector('.reflection-right');
+        const reflectionLeft = document.querySelector('.reflection-left');
+        const reflectionVideo = document.querySelector('.reflection-video');
+        
+        if (reflectionRight && floodAmbience) {
+            // Mouse Enter: The Final Breath - dim visual, silence audio
+            reflectionRight.addEventListener('mouseenter', () => {
+                // Dim the video/visual torrent
+                if (reflectionLeft) {
+                    reflectionLeft.style.opacity = '0.3';
+                    reflectionLeft.style.transition = 'opacity 0.8s ease';
+                }
+                
+                // Silence the audio torrent
+                fadeAudio(floodAmbience, floodAmbience.volume, 0, 800);
+            });
+            
+            // Mouse Leave: Return to Torrent - restore visual and audio
+            reflectionRight.addEventListener('mouseleave', () => {
+                // Restore the video/visual torrent
+                if (reflectionLeft) {
+                    reflectionLeft.style.opacity = '1';
+                }
+                
+                // Restore the audio torrent
+                fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1000);
+            });
+        }
+
+        // ========== INTERSECTION OBSERVER FOR SCENE AUDIO ==========
         const observerOptions = {
             threshold: 0.3,
             rootMargin: '0px'
@@ -1464,27 +1506,36 @@
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
                     
-                    if (entry.target.id === 'flood' && cityAmbience) {
-                        fadeAudio(cityAmbience, cityAmbience.volume, 0.8, 1500);
+                    // Scene 2: Introduction/The Flood - Audio Peak to 100%
+                    if (entry.target.id === 'flood' && floodAmbience) {
+                        fadeAudio(floodAmbience, floodAmbience.volume, 1.0, 1500); // Peak to 100%
                     }
                     
-                    if (entry.target.classList.contains('breath-section') && cityAmbience) {
-                        fadeAudio(cityAmbience, cityAmbience.volume, 0, 800);
+                    // Scene 4: The Breaths - Stay Muted (already at 0 from chapter card)
+                    if (entry.target.classList.contains('breath-section') && floodAmbience) {
+                        // Audio stays at 0 - silence is the sound here
                     }
                     
-                    if (entry.target.id === 'grid' && cityAmbience) {
-                        fadeAudio(cityAmbience, cityAmbience.volume, 0.6, 1500);
+                    // Scene 6: Return to Flood (Grid) - Fade back to 50%
+                    if (entry.target.id === 'grid' && floodAmbience) {
+                        fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1500); // Back to 50%
                     }
                     
-                    if (entry.target.id === 'chapter-flood' && cityAmbience) {
-                        fadeAudio(cityAmbience, cityAmbience.volume, 0, 500);
+                    // Scene 5: Chapter Card II - Stay Muted
+                    if (entry.target.id === 'chapter-flood' && floodAmbience) {
+                        // Audio stays at 0
+                    }
+                    
+                    // Scene 8: Reflection - Maintain 50% (will be controlled by hover)
+                    if (entry.target.id === 'reflection' && floodAmbience) {
+                        fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1500); // 50% background
                     }
                 }
             });
         }, observerOptions);
 
         // Observe elements
-        document.querySelectorAll('.flood-content, .breath-section, .timeline-item, .doc-header, #flood, #grid, #chapter-breaths, #chapter-flood').forEach(el => {
+        document.querySelectorAll('.flood-content, .breath-section, .timeline-item, .doc-header, #flood, #grid, #chapter-breaths, #chapter-flood, #reflection').forEach(el => {
             observer.observe(el);
         });
 
