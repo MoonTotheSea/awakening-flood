@@ -666,7 +666,7 @@
 
         /* ========== STAGE 5: DOCUMENTATION ========== */
         #documentation {
-            background: #0a0a0a;
+            background: #000;
             padding: 120px 50px;
             min-height: 100vh;
         }
@@ -683,17 +683,19 @@
         }
 
         .doc-header h2 {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 300;
             letter-spacing: 0.3em;
             text-transform: uppercase;
             margin-bottom: 30px;
+            color: #fff;
         }
 
         .doc-header p {
             font-size: 1.2rem;
-            color: #888;
+            color: #bbb;
             letter-spacing: 0.1em;
+            font-weight: 300;
         }
 
         .timeline {
@@ -729,25 +731,30 @@
         }
 
         .timeline-content h3 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 30px;
-            color: #f5576c;
-            font-weight: 400;
-            letter-spacing: 0.15em;
+            color: #fff;
+            font-weight: 300;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
         }
 
         .timeline-content p {
             font-size: 1.15rem;
             line-height: 1.9;
-            color: #aaa;
+            color: #bbb;
+            font-weight: 300;
+        }
+
+        .timeline-content p strong {
+            color: #fff;
+            font-weight: 400;
         }
 
         /* Media container - centered */
         .timeline-media {
             width: 100%;
             max-width: 1000px;
-            height: auto;
             min-height: 400px;
             background: #1a1a1a;
             border: 3px solid #333;
@@ -767,6 +774,58 @@
         /* Video specific styles */
         .timeline-media video {
             max-height: 600px;
+        }
+
+        /* Photo gallery for production block */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            width: 100%;
+            max-width: 1000px;
+            padding: 20px;
+            background: #1a1a1a;
+            border: 3px solid #333;
+        }
+
+        .photo-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-gallery img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mixed media container for intervention block */
+        .mixed-media {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .media-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .media-item {
+            background: #1a1a1a;
+            border: 3px solid #333;
+            overflow: hidden;
+            min-height: 300px;
+        }
+
+        .media-item video,
+        .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* ========== STAGE 6: REFLECTION ========== */
@@ -1111,10 +1170,10 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>I. Conception — Dormant</h3>
-                    <p><strong>The Method:</strong> The project began with a constraint: use black and white to resist the flood of color, use silence to resist noise. I generated ten standalone sentences exploring time, memory, love, and nature—each designed to create a pause, a breath in the urban torrent.</p>
+                    <p><strong>The Method:</strong> I began by exploring the relationship between time, memory, emotion, and nature. Each sentence was crafted to function independently—a standalone moment of reflection. The constraint was simple: create black-and-white "breaths" that could pause the saturated, chaotic flood of urban information.</p>
                 </div>
                 <div class="timeline-media">
-                    <!-- Optional: Add conception images here -->
+                    <img src="images/11.png" alt="Conception process">
                 </div>
             </div>
 
@@ -1122,11 +1181,10 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>II. Production — Creation</h3>
-                    <p><strong>Printing:</strong> Each sentence was carefully printed in clean, black typography on white paper. The process of cutting, arranging, and preparing these verses transformed abstract ideas into physical interventions ready to enter public space.</p>
+                    <p><strong>Printing:</strong> The verses were printed on clean white paper with black ink. The process involved printing, cutting, and preparing multiple copies of each sentence—transforming digital text into physical interventions ready to enter public space.</p>
                 </div>
                 <div class="timeline-media">
-                    <!-- Add printing process images here -->
-                    <img src="images/process-print.jpg" alt="Printing process" onerror="this.style.display='none'">
+                    <img src="images/12.png" alt="Production process">
                 </div>
             </div>
 
@@ -1134,13 +1192,10 @@
             <div class="timeline-item">
                 <div class="timeline-content">
                     <h3>III. Intervention — Placement</h3>
-                    <p><strong>Placing:</strong> The poems were placed, pasted, and installed across downtown Toronto—on bulletin boards, subway platforms, phone booths, and walls. Each placement was an act of trust that these private voices would meet anonymous souls at unexpected moments.</p>
+                    <p><strong>Placing:</strong> Each poem was placed across downtown Toronto—on bulletin boards, subway windows, phone booths, park benches, and street poles. These placements were acts of trust: trusting that a private voice would meet an anonymous soul at an unexpected moment. The city became both canvas and witness.</p>
                 </div>
                 <div class="timeline-media">
-                    <!-- Embedded video: autoplay, loop, muted -->
-                    <video autoplay loop muted playsinline>
-                        <source src="videos/process-intervention.mp4" type="video/mp4">
-                    </video>
+                    <img src="images/13.png" alt="Intervention process">
                 </div>
             </div>
         </div>
