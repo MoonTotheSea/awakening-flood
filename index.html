@@ -519,56 +519,10 @@
             to { opacity: 0.5; }
         }
 
-        /* Vibrant saturated backgrounds for each poem */
-        #breath1 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/videos/1.mp4');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath2 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/2.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath3 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/3.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath4 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/4.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath5 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/5.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath6 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/6.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath7 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/7.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath8 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/8.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath9 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/9.png');
-            background-size: cover;
-            background-position: center;
-        }
-        #breath10 { 
-            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/10.png');
-            background-size: cover;
-            background-position: center;
+        /* Vibrant saturated backgrounds for each poem - using videos */
+        #breath1, #breath2, #breath3, #breath4, #breath5, 
+        #breath6, #breath7, #breath8, #breath9, #breath10 { 
+            background: #000;
         }
 
         /* ========== CHAPTER CARD II: THE FLOOD ========== */
@@ -1004,7 +958,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .reflection-video {
             width: 100%;
             height: 100%;
@@ -1033,29 +987,7 @@
             flex-direction: column;
             justify-content: center;
             padding: 0 80px;
-            overflow-y: scroll;
         }
-
-        /* --- 把下面这段新代码加在这里 --- */
-
-        .reflection-right::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .reflection-right::-webkit-scrollbar-track {
-            background: #111;
-        }
-
-        .reflection-right::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-
-        .reflection-right::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
-
-        /* --- 新代码结束 --- */
 
         .reflection-content h2 {
             font-size: 2.8rem;
@@ -1209,6 +1141,9 @@
 
     <!-- STAGE 3: THE BREATHS (10 Poems) -->
     <section id="breath1" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/1.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>The lie shattered our love, leaving nothing but regret and chaos.</p>
             <div class="poem-location">Street Pole</div>
@@ -1216,6 +1151,9 @@
     </section>
 
     <section id="breath2" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/2.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Hope fades with time, but memory keeps the past alive.</p>
             <div class="poem-location">Payment Terminal</div>
@@ -1223,6 +1161,9 @@
     </section>
 
     <section id="breath3" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/3.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Desire meets sadness when the future forgets its dreams.</p>
             <div class="poem-location">Poster Wall</div>
@@ -1230,6 +1171,9 @@
     </section>
 
     <section id="breath4" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/4.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Change steals our moment, yet habit brings it back again.</p>
             <div class="poem-location">Public Board</div>
@@ -1237,6 +1181,9 @@
     </section>
 
     <section id="breath5" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/5.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>The distance between connection and mind is measured in time.</p>
             <div class="poem-location">Community Board</div>
@@ -1244,6 +1191,9 @@
     </section>
 
     <section id="breath6" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/6.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>The wind crosses the ocean of silence, bringing back what we miss.</p>
             <div class="poem-location">Subway Window</div>
@@ -1251,6 +1201,9 @@
     </section>
 
     <section id="breath7" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/7.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Love touches the future through endless time.</p>
             <div class="poem-location">Cork Board</div>
@@ -1258,6 +1211,9 @@
     </section>
 
     <section id="breath8" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/8.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Rain remembers the truth that time tried to erase.</p>
             <div class="poem-location">Bench</div>
@@ -1265,6 +1221,9 @@
     </section>
 
     <section id="breath9" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/9.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>The future forgets our regret but not our desire.</p>
             <div class="poem-location">Subway Platform</div>
@@ -1272,6 +1231,9 @@
     </section>
 
     <section id="breath10" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/10.mp4" type="video/mp4">
+        </video>
         <div class="poem-frame">
             <p>Rain is nature's tears; wind is nature's sigh.</p>
             <div class="poem-location">Park Bench</div>
@@ -1395,35 +1357,11 @@
         </div>
         <div class="reflection-right">
             <div class="reflection-content">
-                <h2>Amid the city’s noise, <br>a poem creates space to breathe</h2>
-                <p>This project began with a simple constraint: to confront color with black and white, to meet the torrent with quiet.</p>
-                
-                <p>But in the process of placing these lines, I discovered the power of chance.</p>
-                
-                <p>I could not predetermine a moment — only create a possibility.</p>
-                
-                <p>I pasted a poem on the subway window, not knowing whether it would be torn away in five minutes or remain for five days</p>
-                
-                <p>I didn’t know who would see it — a weary commuter, or a student like me.</p>
-                
-                <p>Each intervention became an act of trust —<br>trust that this private voice might meet another anonymous soul in some unexpected instant.</p>
-                
-                <p>In that moment, the poem awakens.<br>That one second of pause — that is the whole meaning of this project.</p>
-                
-                <p>While carrying out this street intervention, what struck me most was the tension between public and private voices.</p>
-                
-                <p>I observed how urban space is saturated with colorful, loud commercial messages — a visual torrent.</p>
-                
-                <p>My black-and-white verses, by contrast, were small, quiet private utterances.<br>When placed side-by-side (as seen in the video), this stark contrast alone created a kind of pause.</p>
-                
-                <p>The process was filled with chance.</p>
-                
-                <p>I couldn’t control who would see the poems, or how long they would remain.<br>This inability to predetermine the outcome became central to the work.<br>My intervention was only about creating a possibility in public space.</p>
-                
-                <p>The true awakening happened in that unexpected instant —<br>when a passerby paused amid the flood of information and read a line of poetry.</p>
-                
-                <p>This project taught me that the most restrained expression can, at times, create the strongest presence, even in the noisiest of surroundings.</p>
-                
+                <h2>In the noise of the city,<br>a poem creates<br>a space to breathe</h2>
+                <p>This project began with a simple constraint: black and white against color, silence against the flood.</p>
+                <p>But in placing these sentences, I discovered the power of chance. I cannot predetermine a moment—only create a possibility.</p>
+                <p>Each intervention is an act of trust. Trust that this private voice will meet another soul at an unexpected moment.</p>
+                <p>In that moment, the poem awakens. That one second of pause is the entire meaning of this project.</p>
             </div>
         </div>
     </section>
@@ -1436,32 +1374,65 @@
     <script>
         // ========== AUDIO MANAGEMENT SYSTEM ==========
         let floodAmbience = null;
+        let audioInitialized = false;
+        
+        // Function to initialize audio
+        function initAudio() {
+            if (audioInitialized) return;
+            
+            floodAmbience = new Audio('videos/flow.mp3');
+            floodAmbience.loop = true;
+            floodAmbience.volume = 0;
+            
+            // Try to play
+            floodAmbience.play()
+                .then(() => {
+                    console.log('Audio started successfully');
+                    audioInitialized = true;
+                    fadeAudio(floodAmbience, 0, 0.5, 2000);
+                })
+                .catch(err => {
+                    console.log('Audio autoplay blocked:', err);
+                    // Show a visual indicator or wait for user interaction
+                });
+        }
+        
+        // Click anywhere to start audio (fallback for autoplay restrictions)
+        let userInteracted = false;
+        document.addEventListener('click', () => {
+            if (!userInteracted && floodAmbience) {
+                userInteracted = true;
+                floodAmbience.play()
+                    .then(() => {
+                        console.log('Audio started after user interaction');
+                        fadeAudio(floodAmbience, 0, 0.5, 2000);
+                    })
+                    .catch(err => console.log('Audio play failed:', err));
+            }
+        }, { once: true });
         
         // Auto-play opening video and scroll cue
         window.addEventListener('load', () => {
             const openingVideo = document.querySelector('.opening-video');
             const scrollCue = document.querySelector('.scroll-cue');
             
-            // Create audio element for flood ambience
-            floodAmbience = new Audio('videos/flow.m4a');
-            floodAmbience.loop = true;
-            floodAmbience.volume = 0;
+            // Initialize audio immediately
+            initAudio();
             
             // Start video at credit 3 (12s)
             setTimeout(() => {
                 openingVideo.classList.add('visible');
                 openingVideo.play();
                 
-                // Start audio and fade in to 50% (Opening Credits)
-                floodAmbience.play().catch(err => {
-                    console.log('Audio autoplay prevented:', err);
-                    // Add click-to-play fallback
-                    document.body.addEventListener('click', () => {
-                        floodAmbience.play();
-                        fadeAudio(floodAmbience, 0, 0.5, 2000);
-                    }, { once: true });
-                });
-                fadeAudio(floodAmbience, 0, 0.5, 2000); // Fade to 50% over 2s
+                // Try to start audio if not already playing
+                if (floodAmbience && floodAmbience.paused) {
+                    floodAmbience.play()
+                        .then(() => {
+                            console.log('Audio started at video fade-in');
+                            fadeAudio(floodAmbience, 0, 0.5, 2000);
+                        })
+                        .catch(err => console.log('Audio blocked:', err));
+                }
             }, 12000);
             
             // Show scroll cue (faster - at 13s)
@@ -1481,7 +1452,10 @@
 
         // Audio fade utility
         function fadeAudio(audio, startVol, endVol, duration) {
-            if (!audio) return;
+            if (!audio) {
+                console.log('No audio element to fade');
+                return;
+            }
             
             const steps = 50;
             const stepDuration = duration / steps;
@@ -1529,6 +1503,7 @@
             
             // Fast fade out audio (Chapter Card I)
             if (floodAmbience) {
+                console.log('Fading out audio for chapter transition');
                 fadeAudio(floodAmbience, floodAmbience.volume, 0, 800); // Fast fade to 0
             }
             
@@ -1547,9 +1522,10 @@
         const reflectionLeft = document.querySelector('.reflection-left');
         const reflectionVideo = document.querySelector('.reflection-video');
         
-        if (reflectionRight && floodAmbience) {
+        if (reflectionRight) {
             // Mouse Enter: The Final Breath - dim visual, silence audio
             reflectionRight.addEventListener('mouseenter', () => {
+                console.log('Mouse entered reflection - final breath');
                 // Dim the video/visual torrent
                 if (reflectionLeft) {
                     reflectionLeft.style.opacity = '0.3';
@@ -1557,18 +1533,23 @@
                 }
                 
                 // Silence the audio torrent
-                fadeAudio(floodAmbience, floodAmbience.volume, 0, 800);
+                if (floodAmbience) {
+                    fadeAudio(floodAmbience, floodAmbience.volume, 0, 800);
+                }
             });
             
             // Mouse Leave: Return to Torrent - restore visual and audio
             reflectionRight.addEventListener('mouseleave', () => {
+                console.log('Mouse left reflection - return to torrent');
                 // Restore the video/visual torrent
                 if (reflectionLeft) {
                     reflectionLeft.style.opacity = '1';
                 }
                 
                 // Restore the audio torrent
-                fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1000);
+                if (floodAmbience) {
+                    fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1000);
+                }
             });
         }
 
@@ -1585,26 +1566,31 @@
                     
                     // Scene 2: Introduction/The Flood - Audio Peak to 100%
                     if (entry.target.id === 'flood' && floodAmbience) {
+                        console.log('Entering flood section - audio to 100%');
                         fadeAudio(floodAmbience, floodAmbience.volume, 1.0, 1500); // Peak to 100%
                     }
                     
                     // Scene 4: The Breaths - Stay Muted (already at 0 from chapter card)
                     if (entry.target.classList.contains('breath-section') && floodAmbience) {
+                        console.log('In breath section - audio stays at 0');
                         // Audio stays at 0 - silence is the sound here
                     }
                     
                     // Scene 6: Return to Flood (Grid) - Fade back to 50%
                     if (entry.target.id === 'grid' && floodAmbience) {
+                        console.log('Entering grid - audio back to 50%');
                         fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1500); // Back to 50%
                     }
                     
                     // Scene 5: Chapter Card II - Stay Muted
                     if (entry.target.id === 'chapter-flood' && floodAmbience) {
+                        console.log('Chapter card II - audio stays at 0');
                         // Audio stays at 0
                     }
                     
                     // Scene 8: Reflection - Maintain 50% (will be controlled by hover)
                     if (entry.target.id === 'reflection' && floodAmbience) {
+                        console.log('Entering reflection - audio to 50%');
                         fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 1500); // 50% background
                     }
                 }
