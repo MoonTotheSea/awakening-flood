@@ -139,7 +139,7 @@
             100% { opacity: 1; }
         }
 
-        /* Opening Shot Video Background */
+        /* Opening Shot Video Background - appears 5s after title */
         .opening-video {
             position: absolute;
             top: 0;
@@ -153,7 +153,7 @@
         }
 
         .opening-video.visible {
-            animation: videoFadeIn 4s ease-in 12s forwards;
+            animation: videoFadeIn 4s ease-in 17s forwards;
         }
 
         @keyframes videoFadeIn {
@@ -170,7 +170,7 @@
             z-index: 2;
         }
 
-        /* Scroll Indicator */
+        /* Scroll Indicator - starts black, appears with video */
         .scroll-cue {
             position: absolute;
             bottom: 100px;
@@ -188,7 +188,7 @@
         }
 
         .scroll-cue.visible {
-            animation: cueFadeIn 1.5s ease-in 13s forwards, pulseFloat 3s ease-in-out 14.5s infinite;
+            animation: cueFadeIn 1.5s ease-in 17s forwards, pulseFloat 3s ease-in-out 18.5s infinite;
         }
 
         @keyframes cueFadeIn {
@@ -203,14 +203,14 @@
         .arrow-down {
             width: 30px;
             height: 30px;
-            border-left: 2px solid #fff;
-            border-bottom: 2px solid #fff;
+            border-left: 2px solid #000;
+            border-bottom: 2px solid #000;
             transform: rotate(-45deg);
             transition: border-color 0.3s ease;
         }
 
         .scroll-cue:hover .arrow-down {
-            border-color: #f5576c;
+            border-color: #fff;
         }
 
         /* ========== STAGE 2: THE FLOOD ========== */
@@ -1419,7 +1419,7 @@
             // Initialize audio immediately
             initAudio();
             
-            // Start video at credit 3 (12s)
+            // Start video 5s after title appears (12s + 5s = 17s)
             setTimeout(() => {
                 openingVideo.classList.add('visible');
                 openingVideo.play();
@@ -1433,12 +1433,12 @@
                         })
                         .catch(err => console.log('Audio blocked:', err));
                 }
-            }, 12000);
+            }, 17000);
             
-            // Show scroll cue (faster - at 13s)
+            // Show scroll cue same time as video (17s)
             setTimeout(() => {
                 scrollCue.classList.add('visible');
-            }, 13000);
+            }, 17000);
             
             // Scroll cue click interaction
             scrollCue.addEventListener('click', () => {
