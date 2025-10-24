@@ -428,11 +428,21 @@
         /* ========== STAGE 3: THE BREATHS (10 Poems) ========== */
         .breath-section {
             position: relative;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: #000;
             scroll-snap-align: start;
             scroll-snap-stop: always;
+        }
+
+        /* ⑫ Background video for each poem */
+        .breath-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: saturate(1.8) contrast(1.1);
         }
 
         .breath-overlay {
@@ -931,6 +941,9 @@
 
     <!-- STAGE 3: THE BREATHS (10 Poems) -->
     <section id="breath1" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/1.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>The lie shattered our love, leaving nothing but regret and chaos.</p>
@@ -939,6 +952,9 @@
     </section>
 
     <section id="breath2" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/2.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Hope fades with time, but memory keeps the past alive.</p>
@@ -947,6 +963,9 @@
     </section>
 
     <section id="breath3" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/3.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Desire meets sadness when the future forgets its dreams.</p>
@@ -955,6 +974,9 @@
     </section>
 
     <section id="breath4" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/4.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Change steals our moment, yet habit brings it back again.</p>
@@ -963,6 +985,9 @@
     </section>
 
     <section id="breath5" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/5.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>The distance between connection and mind is measured in time.</p>
@@ -971,6 +996,9 @@
     </section>
 
     <section id="breath6" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/6.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>The wind crosses the ocean of silence, bringing back what we miss.</p>
@@ -979,6 +1007,9 @@
     </section>
 
     <section id="breath7" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/7.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Love touches the future through endless time.</p>
@@ -987,6 +1018,9 @@
     </section>
 
     <section id="breath8" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/8.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Rain remembers the truth that time tried to erase.</p>
@@ -995,6 +1029,9 @@
     </section>
 
     <section id="breath9" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/9.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>The future forgets our regret but not our desire.</p>
@@ -1003,6 +1040,9 @@
     </section>
 
     <section id="breath10" class="breath-section">
+        <video class="breath-video" autoplay loop muted playsinline>
+            <source src="videos/10.mp4" type="video/mp4">
+        </video>
         <div class="breath-overlay"></div>
         <div class="poem-frame">
             <p>Rain is nature's tears; wind is nature's sigh.</p>
