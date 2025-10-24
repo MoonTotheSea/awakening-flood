@@ -717,6 +717,19 @@
             max-height: 600px;
         }
 
+        /* Process video styling */
+        .process-video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            cursor: pointer;
+            background: #000;
+        }
+
+        .process-video::-webkit-media-controls-panel {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
         /* Interactive map container - ENHANCED */
         .map-container {
             position: relative;
@@ -993,14 +1006,18 @@
             font-size: 2.8rem;
             font-weight: 300;
             line-height: 1.5;
-            margin-bottom: 50px;
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #333;
+            color: #fff;
         }
 
         .reflection-content p {
             font-size: 1.15rem;
-            line-height: 1.9;
+            line-height: 2;
             color: #bbb;
-            margin-bottom: 25px;
+            margin-bottom: 40px;
+            font-weight: 300;
         }
 
         .reflection-right:hover ~ .reflection-left {
@@ -1357,13 +1374,33 @@
                 <source src="videos/close.mp4" type="video/mp4">
             </video>
         </div>
-        <div class="reflection-right">
+<div class="reflection-right">
             <div class="reflection-content">
-                <h2>In the noise of the city,<br>a poem creates<br>a space to breathe</h2>
-                <p>This project began with a simple constraint: black and white against color, silence against the flood.</p>
-                <p>But in placing these sentences, I discovered the power of chance. I cannot predetermine a moment—only create a possibility.</p>
-                <p>Each intervention is an act of trust. Trust that this private voice will meet another soul at an unexpected moment.</p>
-                <p>In that moment, the poem awakens. That one second of pause is the entire meaning of this project.</p>
+                <h2>Amid the city's noise,<br>a poem creates<br>a space to breathe.</h2>
+                
+                <p>This project began with a simple constraint: to confront color with black and white, to meet the torrent with quiet.</p>
+                
+                <p>But in the process of placing these lines, I discovered the power of chance.</p>
+                
+                <p>I could not predetermine a moment — only create a possibility.</p>
+                
+                <p>I pasted a poem on the subway window, not knowing whether it would be torn away in five minutes or remain for five days.<br>I didn't know who would see it — a weary commuter, or a student like me.</p>
+                
+                <p>Each intervention became an act of trust —<br>trust that this private voice might meet another anonymous soul in some unexpected instant.<br>In that moment, the poem awakens.</p>
+                
+                <p>That one second of pause — that is the whole meaning of this project.<br>While carrying out this street intervention, what struck me most was the tension between public and private voices.</p>
+                
+                <p>I observed how urban space is saturated with colorful, loud commercial messages — a visual torrent.</p>
+                
+                <p>My black-and-white verses, by contrast, were small, quiet private utterances.<br>When placed side-by-side (as seen in the video), this stark contrast alone created a kind of pause.</p>
+                
+                <p>The process was filled with chance.</p>
+                
+                <p>I couldn't control who would see the poems, or how long they would remain.<br>This inability to predetermine the outcome became central to the work.<br>My intervention was only about creating a possibility in public space.</p>
+                
+                <p>The true awakening happened in that unexpected instant —<br>when a passerby paused amid the flood of information and read a line of poetry.</p>
+                
+                <p>This project taught me that the most restrained expression can, at times, create the strongest presence, even in the noisiest of surroundings.</p>
             </div>
         </div>
     </section>
@@ -1603,6 +1640,38 @@
         document.querySelectorAll('.flood-content, .breath-section, .timeline-item, .doc-header, #flood, #grid, #chapter-breaths, #chapter-flood, #reflection').forEach(el => {
             observer.observe(el);
         });
+
+        // ========== PROCESS VIDEO: PAUSE BACKGROUND AUDIO ==========
+        const processVideo = document.querySelector('.process-video');
+        let audioPausedByVideo = false;
+        
+        if (processVideo && floodAmbience) {
+            // When video starts playing
+            processVideo.addEventListener('play', () => {
+                console.log('Process video playing - pausing background audio');
+                if (floodAmbience && !floodAmbience.paused) {
+                    audioPausedByVideo = true;
+                    fadeAudio(floodAmbience, floodAmbience.volume, 0, 500);
+                }
+            });
+            
+            // When video is paused or ends
+            processVideo.addEventListener('pause', () => {
+                console.log('Process video paused - resuming background audio');
+                if (floodAmbience && audioPausedByVideo) {
+                    audioPausedByVideo = false;
+                    fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 500);
+                }
+            });
+            
+            processVideo.addEventListener('ended', () => {
+                console.log('Process video ended - resuming background audio');
+                if (floodAmbience && audioPausedByVideo) {
+                    audioPausedByVideo = false;
+                    fadeAudio(floodAmbience, floodAmbience.volume, 0.5, 500);
+                }
+            });
+        }
 
         // ========== MAP PIN INTERACTIONS - ENHANCED ==========
         document.addEventListener('DOMContentLoaded', () => {
