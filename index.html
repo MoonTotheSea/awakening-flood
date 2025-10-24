@@ -256,33 +256,58 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            filter: saturate(2.5) contrast(1.4);
+            filter: saturate(2.5) contrast(1.4) brightness(1.1);
             transform: scale(1.1);
         }
 
+        /* Fast cycling through your 10 colorful city photos - 1.5s each */
         .flood-image:nth-child(1) { 
-            animation: rapidFlood 3s infinite 0s; 
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            animation: rapidFlood 15s infinite 0s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/1.png');
         }
         .flood-image:nth-child(2) { 
-            animation: rapidFlood 3s infinite 0.75s; 
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            animation: rapidFlood 15s infinite 1.5s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/2.png');
         }
         .flood-image:nth-child(3) { 
-            animation: rapidFlood 3s infinite 1.5s; 
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+            animation: rapidFlood 15s infinite 3s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/3.png');
         }
         .flood-image:nth-child(4) { 
-            animation: rapidFlood 3s infinite 2.25s; 
-            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            animation: rapidFlood 15s infinite 4.5s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/4.png');
+        }
+        .flood-image:nth-child(5) { 
+            animation: rapidFlood 15s infinite 6s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/5.png');
+        }
+        .flood-image:nth-child(6) { 
+            animation: rapidFlood 15s infinite 7.5s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/6.png');
+        }
+        .flood-image:nth-child(7) { 
+            animation: rapidFlood 15s infinite 9s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/7.png');
+        }
+        .flood-image:nth-child(8) { 
+            animation: rapidFlood 15s infinite 10.5s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/8.png');
+        }
+        .flood-image:nth-child(9) { 
+            animation: rapidFlood 15s infinite 12s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/9.png');
+        }
+        .flood-image:nth-child(10) { 
+            animation: rapidFlood 15s infinite 13.5s; 
+            background-image: url('https://raw.githubusercontent.com/MoonTotheSea/awakening-flood/main/images/10.png');
         }
 
         @keyframes rapidFlood {
-            0%, 25%, 100% { 
+            0%, 90%, 100% { 
                 opacity: 0; 
                 transform: scale(1.15) rotate(0.5deg);
             }
-            10%, 15% { 
+            10%, 80% { 
                 opacity: 1; 
                 transform: scale(1) rotate(0deg);
             }
@@ -1115,6 +1140,12 @@
     <section id="flood">
         <div class="flood-left">
             <div class="flood-carousel">
+                <div class="flood-image"></div>
+                <div class="flood-image"></div>
+                <div class="flood-image"></div>
+                <div class="flood-image"></div>
+                <div class="flood-image"></div>
+                <div class="flood-image"></div>
                 <div class="flood-image"></div>
                 <div class="flood-image"></div>
                 <div class="flood-image"></div>
